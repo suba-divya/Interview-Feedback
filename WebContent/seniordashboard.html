@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <title>Senior Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      font-family: 'Josefin Sans', sans-serif;
+      background-color: #f5f6f7;
+      line-height: 1.8;
+      color: black;
+  }
+  p {font-size: 16px;
+    color:black;
+
+  }
+
+  a{
+    color: white;
+  }
+  
+  .bg-1 { 
+      background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX5317406.jpg");
+      background-color:#f5f6f7 ; /* Green */
+      color: #ffffff;
+  }
+  .container-fluid {
+
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+  .navbar {
+
+      background-color: #333;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+      color:white;
+  }
+  .navbar-nav  li a:hover {
+      color: #333 !important;
+  }
+  input,select{
+  border: 1px solid #2C3E50;
+  padding: 10px;
+  width:20%;
+ 
+  text-decoration: none;
+  color: black;
+   outline: none;
+}
+textarea{
+  border: 1px solid #2C3E50;
+  padding: 10px;
+  width:50%;
+ 
+  text-decoration: none;
+  color: black;
+   outline: none;
+}
+.submit{
+  border: 1px solid grey;
+  padding: 10px;
+  width:20%;
+  border-radius: 20px;
+  background-color: grey;
+  color: black;
+   outline: none;
+}
+
+  </style>
+</head>
+<body>
+<form action="Question" method="post"> 
+
+<!-- Navbar -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#" style ="color: white">CRACK IT</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html" style ="color: white">LOG OUT</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  
+   <h1 style="color: black">Welcome to Crack It</h1><br>
+   <p>Select A company:<br></p>
+   <select name="company" style="color: black">
+  <option value="zoho">Zoho</option>
+  <option value="tcs">TCS</option>
+  <option value="wipro">Wipro</option>
+  <option value="infosys">Infosys</option>
+    <option value="techmahindra">Techmahindra</option>
+</select>
+<p>Enter your question:</p><br><textarea style="color:black" rows="7" cols="50" name="question" id="qsn"></textarea>
+<br>
+<br>
+<input type ="submit" id="submit" onclick="message()">submit<br>
+
+</div>
+</form>
+
+</body>
+<script type="text/javascript">
+function trimfield(str) 
+{ 
+    return str.replace(/^\s+|\s+$/g,''); 
+}
+function validate()
+{
+     var obj1 = document.getElementById('qsn');
+    
+         if(trimfield(obj1.value) == '') 
+         {      
+              alert("Please Fill in the question!");
+              obj1.focus();
+              return false;       
+         }
+       
+         else
+           return true;
+}
+</script>
+</html>
